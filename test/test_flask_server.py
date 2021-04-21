@@ -26,7 +26,7 @@ dane = {
     "SingleLine1": "imie",
     "SingleLine2": "nazwiosko",
     "SingleLine3": "wiadomosc",
-    "Email": f"adrian{timestamp}@solwit.com",
+    "Email": f"adrian{timestamp}@example.com",
     "PhoneNumber_countrycode": f"{timestamp}",
     "DecisionBox": "on",
     "DecisionBox1": "off",
@@ -161,7 +161,7 @@ class TestAPI:
             SingleLine1="wojtek",
             SingleLine2="wielkopolski",
             SingleLine3="tresc wiadomosci",
-            Email=f"xxczxc{timestamp}@solwit.com",
+            Email=f"xxczxc{timestamp}@example.com",
             DecisionBox='OK',
             DecisionBox1="NIE",
             PhoneNumber="000999888")
@@ -206,14 +206,14 @@ class TestAPI:
             SingleLine1="adam",
             SingleLine2="wielkopolski",
             SingleLine3="tresc wiadomosci",
-            Email=f"jajcarz{timestamp}@solwit.com",
+            Email=f"jajcarz{timestamp}@example.com",
             DecisionBox='OK',
             DecisionBox1="NIE",
             PhoneNumber="000999888")
         for i in range(3):
             client.post(post_method, data=data_to_send)
 
-        find_records = client.get(filter_method + f'/?Email=jajcarz{timestamp}@solwit.com').json
+        find_records = client.get(filter_method + f'/?Email=jajcarz{timestamp}@example.com').json
         assert len(find_records) == 3
 
     def test_get_method_with_filter_by_phone_number(self):

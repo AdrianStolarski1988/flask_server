@@ -9,11 +9,6 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 database = "database.db"
 
-quotes = [
-    "A noble spirit embiggens the smallest man! ~ Jebediah Springfield",
-    "If there is a way to do it better... find it. ~ Thomas Edison",
-    "No one knows what he can do till he tries. ~ Publilius Syrus"
-]
 
 
 
@@ -25,18 +20,9 @@ def dict_factory(cursor, row):
 
 
 class FlaskView(FlaskView):
-    # route_base = "solwit"
 
     def index(self):
         return "jajaja"
-    #
-    # def get(self, id):
-    #     id = int(id)
-    #     if id < len(quotes) - 1:
-    #         return quotes[id]
-    #     else:
-    #         return "Not Found", 404
-
 
 
     @route('/all/', methods = ['GET'])
