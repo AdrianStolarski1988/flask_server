@@ -93,22 +93,7 @@ app.config['TESTING'] = True
 client = app.test_client()
 
 class TestAPI:
-    # def setup_method(self):
-        # copy_files(source_db, target_db)
-        # import_data_to_db_from_csv(source_db, data_to_import)
-        #
-        # print("\n dupa")
-
-        # app = Flask(__name__)
-        # FlaskView.register(app)
-        # app.config['TESTING'] = True
-        # client = app.test_client()
-
-        # yield None
-        # copy_files(target_db, source_db)
-        # os.remove(target_db)
-
-
+  
     @pytest.fixture(scope='class')
     def add_record(self):
         post = client.post(post_method, data=dane)
